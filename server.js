@@ -15,8 +15,13 @@ app.set("views", "./views");
 app.set("view engine", "ejs");
 
 //4: Routing code
+app.post("/addItem", (req, res) => {
+    console.log(req.body);
+    res.json({ test: "success"});
+});
+
 app.get("/", (req, res) => {
-    res.send(`<h1 style = "background: red">What's up</h1>`);
+    res.render("harid");
 });
 
 app.get("/gift", (req, res) => {
