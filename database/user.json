@@ -1,0 +1,32 @@
+{
+    "name": "Firdavs",
+    "profession": ["Software Engineer"],
+    "age": "22",
+    "residence": "South Korea",
+    "freelance": "Available",
+    "address": "Seoul, South Korea",
+    "language": [
+        { "lang": "English", "score": "100%" }, 
+        { "lang": "Korean", "score": "50%" },
+        { "lang": "Uzbek", "score": "100%" },
+        { "lang": "Russian", "score": "80%" }
+    ],
+    "skills": [
+        { "skill": "C Programming", "score": "100%" },
+        { "skill": "Python", "score": "90%" },
+        { "skill": "SQL", "score": "100%" },
+        { "skill": "Machine Learning", "score": "70%" },
+        { "skill": "Data Analysis", "score": "60%" }
+    ],
+    "extra_skills": ["Public Speaking", "Team Collaboration", "Presentation Design", "Project Management"],
+    "work_place": ["Software Engineer in IT Company"],
+    "service_desc": "I provide tutoring in programming, data analysis, and academic writing. I also help with technical presentations and research projects.",
+    "about_me": "I am a curious and hardworking student passionate about computer science, data analysis, and innovation. I enjoy solving problems, learning new technologies, and helping others understand complex concepts.",
+    "city": "Seoul",
+    "title": ["Undergraduate Student", "Future Data Scientist", "Tech Enthusiast"],
+    "flower_desc": ["A symbol of peace and purity", "Represents resilience and hope", "Brightens any space with positivity"],
+    "flower_name": ["Rose", "Tulip", "Lotus", "Cherry Blossom"],
+    "flower_price": ["$10", "$15", "$25", "$35", "$45"],
+    "famous_words": ["Knowledge is power", "Stay curious, stay humble", "Dream big, work hard"],
+    "famous_name": ["Steve Jobs"]
+}
