@@ -75,15 +75,35 @@ const jack_ma_advice = [
 
 // run()
 
-function countLetter(a, text) {
-  let count = 0;
-  for (let i = 0; i < text.length; i++) {
-    if (text[i] === a) {
-      count++;
-    }
+// function countLetter(a, text) {
+//   let count = 0;
+//   for (let i = 0; i < text.length; i++) {
+//     if (text[i] === a) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+
+// console.log(countLetter("e", "engineer")); 
+
+// DEFINE
+function qoldiqliBolish(a, b, callback) {
+  if (b === 0) {
+    callback("Mahraj nolga teng emas!", null);
+  } else {
+    const c = a % b;
+    callback(null, c);
   }
-  return count;
 }
 
-
-console.log(countLetter("e", "engineer")); 
+// CALL
+qoldiqliBolish(13, 9, (err, data) => {
+  if (err) {
+    console.log("ERROR:", err);
+  } else {
+    console.log("data:", data);
+    console.log("MANTIQLAR...");
+  }
+});
