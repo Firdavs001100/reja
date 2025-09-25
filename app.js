@@ -17,12 +17,30 @@ app.set("views", "./views");
 app.set("view engine", "ejs");
 
 //4: Routing code
-app.post("/addItem", (req, res) => {
-    res.json({ test: "success"});
+app.post("/create-item", (req, res) => {
+    console.log("User entered to the route: /create-item");
+    console.log("Req: ", req.body);
+    const new_reja = req.body.reja;
+    db.collection("plans").insertOne({ reja: new_reja}, (err, data) => {
+        if (err) {
+            console.log(err);
+            res.end("Something went wrong");
+        } else {
+            res.end("Added successfully!");
+        }
+    })
 });
 
 app.get("/", (req, res) => {
-    res.render("reja");
+    console.log("User entered to the route: /");
+    db.collection("plans").find().toArray((err, data) => {
+        if (err) {
+            console.log(err);
+            res.end(`Something went wrong: ${err}`);
+        } else {
+            res.render("reja", { plans: data });
+        }
+    })
 });
 
 app.get("/gift", (req, res) => {

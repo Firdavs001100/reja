@@ -20,7 +20,7 @@
           <div class="d-flex align-items-center">
             <input 
               id="create-field"
-              name="item"
+              name="reja"
               autofocus
               autocomplete="off"
               class="form-control mr-3"
@@ -31,6 +31,17 @@
           </div>
         </form>
       </div>
+      <ul id="item-list" class="list-group pb-5">
+        <% plans.forEach(plan => { %>
+        <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
+          <span class="item-text"><%= plan.reja %></span>
+          <div>
+            <button data-id="<%= plan._id %>" class="edit-me btn btn-secondary btn-sm mr-1">Ozgartirish</button>
+            <button data-id="<%= plan._id %>" class="delete-me btn btn-danger btn-sm">Ochirish</button>
+          </div>
+        </li>
+        <% }); %>
+      </ul>
       <button id="clean-all" class="btn btn-danger" style="border-radius: 20px;">Delete all</button>
     </div>
   </body>

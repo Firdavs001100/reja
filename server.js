@@ -11,7 +11,7 @@ mongodb.MongoClient.connect(
     if (err) {
       console.log("Error on connection of MongoDB: ", err);
     } else {
-      db = client.db("reja"); // choose your database name
+      db = client.db("Reja"); // choose your database name
       module.exports.db = () => db; // 🔑 export a function
 
       const app = require("./app");
