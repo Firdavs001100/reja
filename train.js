@@ -1,11 +1,30 @@
-const jack_ma_advice = [
-    "Learn and make mistakes.",
-    "Follow a good leader.",
-    "Take risks and try your own ideas.",
-    "Focus on your strengths.",
-    "Guide and train young people.",
-    "Relax and enjoy life."
-]
+// // TASK B
+
+function countDigits(text) {
+    let i = 0;
+    let count = 0;
+    while (i < text.length) {
+        if(text[i] >= "0" && text[i] <= "9") {
+            count++
+        }
+        i++
+    }
+
+    return count;
+}
+
+const result = countDigits("w1njib2o12b123j");
+console.log(result);
+
+
+// const jack_ma_advice = [
+//     "Learn and make mistakes.",
+//     "Follow a good leader.",
+//     "Take risks and try your own ideas.",
+//     "Focus on your strengths.",
+//     "Guide and train young people.",
+//     "Relax and enjoy life."
+// ]
 
 // // Callback funtions
 // function give_an_advice(age, callback) {
@@ -89,21 +108,21 @@ const jack_ma_advice = [
 // console.log(countLetter("e", "engineer")); 
 
 // DEFINE
-function qoldiqliBolish(a, b, callback) {
-  if (b === 0) {
-    callback("Mahraj nolga teng emas!", null);
-  } else {
-    const c = a % b;
-    callback(null, c);
-  }
-}
+// function qoldiqliBolish(a, b, callback) {
+//   if (b === 0) {
+//     callback("Mahraj nolga teng emas!", null);
+//   } else {
+//     const c = a % b;
+//     callback(null, c);
+//   }
+// }
 
-// CALL
-qoldiqliBolish(13, 9, (err, data) => {
-  if (err) {
-    console.log("ERROR:", err);
-  } else {
-    console.log("data:", data);
-    console.log("MANTIQLAR...");
-  }
-});
+// // CALL
+// qoldiqliBolish(13, 9, (err, data) => {
+//   if (err) {
+//     console.log("ERROR:", err);
+//   } else {
+//     console.log("data:", data);
+//     console.log("MANTIQLAR...");
+//   }
+// });
