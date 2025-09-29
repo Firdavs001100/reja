@@ -1,20 +1,112 @@
-// // TASK B
+// // TASK C
 
-function countDigits(text) {
-    let i = 0;
-    let count = 0;
-    while (i < text.length) {
-        if(text[i] >= "0" && text[i] <= "9") {
-            count++
-        }
-        i++
+const moment = require("moment");
+
+let time = moment().format("HH:mm:ss")
+class Shop {
+    constructor(item1Q, item2Q, item3Q) {
+        this.item1Q = item1Q;
+        this.item2Q = item2Q;
+        this.item3Q = item3Q;
     }
 
-    return count;
+    qoldiq() {
+        console.log(`Soat ${time}: Sizning mahsulotlaringiz va ularning miqdori ⬇️ \nNon: ${this.item1Q}ta \nLagmon: ${this.item2Q}ta \nCola: ${this.item3Q}ta`);
+        console.log("=====");
+    }
+
+    qabul(item, quantity) {
+        switch (item) {
+            case "non":
+            case "Non":
+                this.item1Q += quantity;
+                console.log(`Sizda jami ${this.item1Q}ta 'Non' bo'ldi`);
+                console.log("=====");
+                break;
+            case "lagmon":
+            case "Lagmon":
+                this.item2Q += quantity;
+                console.log(`Sizda jami ${item2Q}ta 'Lagmon' bo'ldi`);
+                console.log("=====");
+            case "cola":
+            case "Cola":
+                this.item3Q += quantity;
+                console.log(`Sizda jami ${item3Q}ta 'Cola' bo'ldi`);
+                console.log("=====");
+            default:
+                console.log("Iltimos to'g'ri argument kiriting! 1nchi argument hohlagan mahsulotingizga, 2nchisi esa shu mahsulotni miqdori");
+                console.log("=====");
+                break;
+        }
+    }
+
+    sotish(item, quantity) {
+        switch (item) {
+            case "non":
+            case "Non":
+                if (this.item1Q > quantity) {
+                    this.item1Q -= quantity;
+                    console.log(`Sizda ${this.item1Q}ta 'Non' qoldi`);
+                    console.log("=====");
+                } else {
+                    console.log(`Sizda faqat ${this.item1Q}ta 'Non' bor. Itlimos magazinni shu mahsulot bilan to'ldirib yana qayta urinib ko'ring`);
+                    console.log("=====");
+                }
+                break;
+            case "lagmon":
+            case "Lagmon":
+                if (this.item2Q > quantity) {
+                    this.item2Q -= quantity;
+                    console.log(`Sizda ${this.item2Q}ta 'Lagmon' qoldi`);
+                    console.log("=====");
+                } else {
+                    console.log(`Sizda faqat ${this.item2Q}ta 'Lagmon' bor. Itlimos magazinni shu mahsulot bilan to'ldirib yana qayta urinib ko'ring`);
+                    console.log("=====");
+                }
+                break;
+            case "cola":
+            case "Cola":
+                if (this.item3Q > quantity) {
+                    this.item3Q -= quantity;
+                    console.log(`Sizda ${this.item3Q}ta 'Cola' qoldi`);
+                    console.log("=====");
+                } else {
+                    console.log(`Sizda faqat ${this.item3Q}ta 'Cola' bor. Itlimos magazinni shu mahsulot bilan to'ldirib yana qayta urinib ko'ring`);
+                    console.log("=====");
+                }
+                break;
+            default:
+                console.log("Iltimos to'g'ri argument kiriting! 1nchi argument hohlagan mahsulotingizga, 2nchisi esa shu mahsulotni miqdori");
+                console.log("=====");
+                break;
+        }
+    }
 }
 
-const result = countDigits("w1njib2o12b123j");
-console.log(result);
+const shoppingCart = new Shop(3, 2, 9);
+shoppingCart.qoldiq();
+shoppingCart.qabul("asal", 2); // bu productimiz yo'q. Shunga deafultimizni ko'rsatadi bizga
+shoppingCart.qabul("Non", 4);
+shoppingCart.sotish("non", 4);
+shoppingCart.qoldiq();
+
+// // TASK B
+
+// function countDigits(text) {
+//     let i = 0;
+//     let count = 0;
+//     while (i < text.length) {
+//         if(text[i] >= "0" && text[i] <= "9") {
+//             count++
+//         }
+//         i++
+//     }
+
+//     return count;
+// }
+
+// const result = countDigits("w1njib2o12b123j");
+// console.log(result);
 
 
 // const jack_ma_advice = [

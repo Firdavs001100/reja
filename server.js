@@ -2,7 +2,7 @@ const http = require("http");
 const mongodb = require("mongodb");
 
 let db;
-const connectionString = "mongodb+srv://Firdavs:testmit34@cluster0.vlhfuvv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const connectionString = "mongodb+srv://Firdavs:testmit34@cluster0.vlhfuvv.mongodb.net/Reja";
 
 mongodb.MongoClient.connect(
   connectionString,
@@ -11,9 +11,10 @@ mongodb.MongoClient.connect(
     if (err) {
       console.log("Error on connection of MongoDB: ", err);
     } else {
-      db = client.db("Reja"); // choose your database name
-      module.exports.db = () => db; // 🔑 export a function
+      // db = client.db("Reja"); // choose your database name
+      // module.exports.db = () => db; // 🔑 export a function
 
+      module.exports = client;
       const app = require("./app");
       console.log("✅ MongoDB connection success");
 

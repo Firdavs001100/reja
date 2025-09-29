@@ -1,5 +1,6 @@
 console.log("Web server is starting...");
 
+const mongodb = require("mongodb");
 const express = require("express");
 const app = express();
 
@@ -21,15 +22,18 @@ app.post("/create-item", (req, res) => {
     console.log("User entered to the route: /create-item");
     console.log("Req: ", req.body);
     const new_reja = req.body.reja;
-    db.collection("plans").insertOne({ reja: new_reja}, (err, data) => {
-        if (err) {
-            console.log(err);
-            res.end("Something went wrong");
-        } else {
-            res.end("Added successfully!");
-        }
+    db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+        res.json(data.ops[0]);
+        console.log(data.ops[0]);
     })
 });
+
+app.post("/delete-item", (req, res) => {
+    const id = req.body.id;
+    db.collection("plans").deleteOne({ _id: new mongodb.ObjectId(id) }, (err, data) => {
+        res.json({ state: "success" });
+    })
+})
 
 app.get("/", (req, res) => {
     console.log("User entered to the route: /");

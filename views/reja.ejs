@@ -14,7 +14,7 @@
   <body style="background-color: #b8bbd1">
     <!-- SHU YERDAN YOZASIZ -->
     <div class="container">
-      <h1 class="display-4 text-center py-1">Reha va maqsadlar</h1>
+      <h1 class="display-4 text-center py-1">Reja va maqsadlar</h1>
       <div class="jumbotron p-3 shadow-sm">
         <form id="create-form" action="/create-item" method="POST">
           <div class="d-flex align-items-center">
@@ -32,7 +32,7 @@
         </form>
       </div>
       <ul id="item-list" class="list-group pb-5">
-        <% plans.forEach(plan => { %>
+        <% plans.map(plan => { %>
         <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
           <span class="item-text"><%= plan.reja %></span>
           <div>
@@ -44,5 +44,8 @@
       </ul>
       <button id="clean-all" class="btn btn-danger" style="border-radius: 20px;">Delete all</button>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./browser.js"></script>
   </body>
 </html>
