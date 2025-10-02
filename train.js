@@ -1,94 +1,133 @@
-// // TASK C
+// // TASK D
 
-const moment = require("moment");
-
-let time = moment().format("HH:mm:ss")
-class Shop {
-    constructor(item1Q, item2Q, item3Q) {
-        this.item1Q = item1Q;
-        this.item2Q = item2Q;
-        this.item3Q = item3Q;
+function checkEqual(a, b) {
+    if (a.length !== b.length) {
+        return false
     }
 
-    qoldiq() {
-        console.log(`Soat ${time}: Sizning mahsulotlaringiz va ularning miqdori ⬇️ \nNon: ${this.item1Q}ta \nLagmon: ${this.item2Q}ta \nCola: ${this.item3Q}ta`);
-        console.log("=====");
-    }
+    let sortedA = a.split("").sort().join();
+    let sortedB = b.split("").sort().join();
 
-    qabul(item, quantity) {
-        switch (item) {
-            case "non":
-            case "Non":
-                this.item1Q += quantity;
-                console.log(`Sizda jami ${this.item1Q}ta 'Non' bo'ldi`);
-                console.log("=====");
-                break;
-            case "lagmon":
-            case "Lagmon":
-                this.item2Q += quantity;
-                console.log(`Sizda jami ${item2Q}ta 'Lagmon' bo'ldi`);
-                console.log("=====");
-            case "cola":
-            case "Cola":
-                this.item3Q += quantity;
-                console.log(`Sizda jami ${item3Q}ta 'Cola' bo'ldi`);
-                console.log("=====");
-            default:
-                console.log("Iltimos to'g'ri argument kiriting! 1nchi argument hohlagan mahsulotingizga, 2nchisi esa shu mahsulotni miqdori");
-                console.log("=====");
-                break;
-        }
-    }
-
-    sotish(item, quantity) {
-        switch (item) {
-            case "non":
-            case "Non":
-                if (this.item1Q > quantity) {
-                    this.item1Q -= quantity;
-                    console.log(`Sizda ${this.item1Q}ta 'Non' qoldi`);
-                    console.log("=====");
-                } else {
-                    console.log(`Sizda faqat ${this.item1Q}ta 'Non' bor. Itlimos magazinni shu mahsulot bilan to'ldirib yana qayta urinib ko'ring`);
-                    console.log("=====");
-                }
-                break;
-            case "lagmon":
-            case "Lagmon":
-                if (this.item2Q > quantity) {
-                    this.item2Q -= quantity;
-                    console.log(`Sizda ${this.item2Q}ta 'Lagmon' qoldi`);
-                    console.log("=====");
-                } else {
-                    console.log(`Sizda faqat ${this.item2Q}ta 'Lagmon' bor. Itlimos magazinni shu mahsulot bilan to'ldirib yana qayta urinib ko'ring`);
-                    console.log("=====");
-                }
-                break;
-            case "cola":
-            case "Cola":
-                if (this.item3Q > quantity) {
-                    this.item3Q -= quantity;
-                    console.log(`Sizda ${this.item3Q}ta 'Cola' qoldi`);
-                    console.log("=====");
-                } else {
-                    console.log(`Sizda faqat ${this.item3Q}ta 'Cola' bor. Itlimos magazinni shu mahsulot bilan to'ldirib yana qayta urinib ko'ring`);
-                    console.log("=====");
-                }
-                break;
-            default:
-                console.log("Iltimos to'g'ri argument kiriting! 1nchi argument hohlagan mahsulotingizga, 2nchisi esa shu mahsulotni miqdori");
-                console.log("=====");
-                break;
-        }
+    if (sortedA === sortedB) {
+        return true
+    } else {
+        return false
     }
 }
 
-const shoppingCart = new Shop(3, 2, 9);
-shoppingCart.qoldiq();
-shoppingCart.qabul("asal", 2); // bu productimiz yo'q. Shunga deafultimizni ko'rsatadi bizga
-shoppingCart.qabul("Non", 4);
-shoppingCart.sotish("non", 4);
-shoppingCart.qoldiq();
+console.log(checkEqual("martin", "tinram"));
+
+// wrong logic
+// function checkEqual(a, b) {
+//     let isEqual = false;
+//     for (let i=0; i < a.length; i++) {
+//         for (let j=0; j < b.length; j++) {
+//             if (a[i] === b[j]) {
+//                 isEqual = true;
+//             } else {
+//                 isEqual = false;
+//             }
+//         }     
+//     }
+
+//     if (isEqual) {
+//         return "Two inputs are equal";
+//     } else {
+//         return "Two inputs are NOT equal"
+//     }
+// };
+
+
+// // TASK C
+// const moment = require("moment");
+
+// let time = moment().format("HH:mm:ss")
+// class Shop {
+//     constructor(item1Q, item2Q, item3Q) {
+//         this.item1Q = item1Q;
+//         this.item2Q = item2Q;
+//         this.item3Q = item3Q;
+//     }
+
+//     qoldiq() {
+//         console.log(`Soat ${time}: Sizning mahsulotlaringiz va ularning miqdori ⬇️ \nNon: ${this.item1Q}ta \nLagmon: ${this.item2Q}ta \nCola: ${this.item3Q}ta`);
+//         console.log("=====");
+//     }
+
+//     qabul(item, quantity) {
+//         switch (item) {
+//             case "non":
+//             case "Non":
+//                 this.item1Q += quantity;
+//                 console.log(`Sizda jami ${this.item1Q}ta 'Non' bo'ldi`);
+//                 console.log("=====");
+//                 break;
+//             case "lagmon":
+//             case "Lagmon":
+//                 this.item2Q += quantity;
+//                 console.log(`Sizda jami ${item2Q}ta 'Lagmon' bo'ldi`);
+//                 console.log("=====");
+//             case "cola":
+//             case "Cola":
+//                 this.item3Q += quantity;
+//                 console.log(`Sizda jami ${item3Q}ta 'Cola' bo'ldi`);
+//                 console.log("=====");
+//             default:
+//                 console.log("Iltimos to'g'ri argument kiriting! 1nchi argument hohlagan mahsulotingizga, 2nchisi esa shu mahsulotni miqdori");
+//                 console.log("=====");
+//                 break;
+//         }
+//     }
+
+//     sotish(item, quantity) {
+//         switch (item) {
+//             case "non":
+//             case "Non":
+//                 if (this.item1Q > quantity) {
+//                     this.item1Q -= quantity;
+//                     console.log(`Sizda ${this.item1Q}ta 'Non' qoldi`);
+//                     console.log("=====");
+//                 } else {
+//                     console.log(`Sizda faqat ${this.item1Q}ta 'Non' bor. Itlimos magazinni shu mahsulot bilan to'ldirib yana qayta urinib ko'ring`);
+//                     console.log("=====");
+//                 }
+//                 break;
+//             case "lagmon":
+//             case "Lagmon":
+//                 if (this.item2Q > quantity) {
+//                     this.item2Q -= quantity;
+//                     console.log(`Sizda ${this.item2Q}ta 'Lagmon' qoldi`);
+//                     console.log("=====");
+//                 } else {
+//                     console.log(`Sizda faqat ${this.item2Q}ta 'Lagmon' bor. Itlimos magazinni shu mahsulot bilan to'ldirib yana qayta urinib ko'ring`);
+//                     console.log("=====");
+//                 }
+//                 break;
+//             case "cola":
+//             case "Cola":
+//                 if (this.item3Q > quantity) {
+//                     this.item3Q -= quantity;
+//                     console.log(`Sizda ${this.item3Q}ta 'Cola' qoldi`);
+//                     console.log("=====");
+//                 } else {
+//                     console.log(`Sizda faqat ${this.item3Q}ta 'Cola' bor. Itlimos magazinni shu mahsulot bilan to'ldirib yana qayta urinib ko'ring`);
+//                     console.log("=====");
+//                 }
+//                 break;
+//             default:
+//                 console.log("Iltimos to'g'ri argument kiriting! 1nchi argument hohlagan mahsulotingizga, 2nchisi esa shu mahsulotni miqdori");
+//                 console.log("=====");
+//                 break;
+//         }
+//     }
+// }
+
+// const shoppingCart = new Shop(3, 2, 9);
+// shoppingCart.qoldiq();
+// shoppingCart.qabul("asal", 2); // bu productimiz yo'q. Shunga deafultimizni ko'rsatadi bizga
+// shoppingCart.qabul("Non", 4);
+// shoppingCart.sotish("non", 4);
+// shoppingCart.qoldiq();
 
 // // TASK B
 
