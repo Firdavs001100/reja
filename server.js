@@ -19,7 +19,7 @@ mongodb.MongoClient.connect(
       console.log("✅ MongoDB connection success");
 
       const server = http.createServer(app);
-      const PORT = 3000;
+      const PORT = 4009;
       server.listen(PORT, () => {
         console.log(`The server is running on http://localhost:${PORT}`);
       });
