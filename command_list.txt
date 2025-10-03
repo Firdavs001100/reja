@@ -1,0 +1,53 @@
+=======================================
+
+MY SERVER: 191.101.233.42:4009
+
+=======================================
+
+COMMAND FOR ➡️ PM2 👇👇👇
+
+npm install pm2 -g
+
+pm2 ls
+pm2 logs ID
+
+pm2 start server.js --name="JohnReja" 
+
+pm2 stop id
+pm2 delete id
+pm2 restart id
+
+=======================================
+
+COMMAND FOR ➡️ PORT STATUS 👇👇👇
+
+ufw status
+ufw allow PORT
+
+ufw status numbered
+ufw delete NUMBER
+
+=======================================
+
+COMMAND FOR ➡️ VPS CONFIGURATION 👇👇👇
+
+open terminal and click command+shift+k to enter a vps config
+
+MIT34 GROUP
+hostname: srv1038530.hstgr.cloud
+
+ssh root@191.101.233.42
+password: Damir7777777#
+user: root
+
+=======================================
+
+COMMAND FOR ➡️ ANY CHANGES TO THE FILES INSIDE VPS 👇👇👇
+
+vi file_name // It is used to open a file and edit it.
+then -> press i and it'll allow us to edit.
+After editing press esc and write :wq
+cat file_name // it's used to just check the file
+
+=======================================
+

@@ -1,21 +1,31 @@
-// // TASK D
+// // TASK E
 
-function checkEqual(a, b) {
-    if (a.length !== b.length) {
-        return false
-    }
-
-    let sortedA = a.split("").sort().join();
-    let sortedB = b.split("").sort().join();
-
-    if (sortedA === sortedB) {
-        return true
-    } else {
-        return false
-    }
+function toReverse(text) {
+    let textArr = text.split("");
+    textArr.reverse();
+    return textArr.join("");
 }
 
-console.log(checkEqual("martin", "tinram"));
+console.log(toReverse("Mike Tyson"));
+
+// // TASK D
+
+// function checkEqual(a, b) {
+//     if (a.length !== b.length) {
+//         return false
+//     }
+
+//     let sortedA = a.split("").sort().join();
+//     let sortedB = b.split("").sort().join();
+
+//     if (sortedA === sortedB) {
+//         return true
+//     } else {
+//         return false
+//     }
+// }
+
+// console.log(checkEqual("martin", "tinram"));
 
 // wrong logic
 // function checkEqual(a, b) {
