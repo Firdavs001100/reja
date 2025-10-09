@@ -1,12 +1,26 @@
-// // TASK E
+// // TASK F
 
-function toReverse(text) {
-    let textArr = text.split("");
-    textArr.reverse();
-    return textArr.join("");
+function findDoublers(text) {
+  for (let i = 0; i < text.length; i++) {
+    for (let j = i + 1; j < text.length; j++) {
+      if (text[i] === text[j]) return true;
+    }
+  }
+  return false;
 }
 
-console.log(toReverse("Mike Tyson"));
+console.log(findDoublers("heloo"));
+console.log(findDoublers("helo"));
+
+// // TASK E
+
+// function toReverse(text) {
+//     let textArr = text.split("");
+//     textArr.reverse();
+//     return textArr.join("");
+// }
+
+// console.log(toReverse("Mike Tyson"));
 
 // // TASK D
 
@@ -37,7 +51,7 @@ console.log(toReverse("Mike Tyson"));
 //             } else {
 //                 isEqual = false;
 //             }
-//         }     
+//         }
 //     }
 
 //     if (isEqual) {
@@ -46,7 +60,6 @@ console.log(toReverse("Mike Tyson"));
 //         return "Two inputs are NOT equal"
 //     }
 // };
-
 
 // // TASK C
 // const moment = require("moment");
@@ -157,7 +170,6 @@ console.log(toReverse("Mike Tyson"));
 // const result = countDigits("w1njib2o12b123j");
 // console.log(result);
 
-
 // const jack_ma_advice = [
 //     "Learn and make mistakes.",
 //     "Follow a good leader.",
@@ -189,7 +201,6 @@ console.log(toReverse("Mike Tyson"));
 // })
 // console.log("stop")
 
-
 // Async functions
 // async function give_an_advice(age) {
 //     if (typeof age !== "number") throw new Error("Please, enter a number", null)
@@ -208,7 +219,6 @@ console.log(toReverse("Mike Tyson"));
 //     }
 // }
 
-
 // Then and catch
 // console.log("start");
 // give_an_advice(90)
@@ -219,7 +229,6 @@ console.log(toReverse("Mike Tyson"));
 //         console.log("Error: ", err)
 //     })
 // console.log("stop")
-
 
 // async orqali multiple so'rash
 // async function run() {
@@ -245,8 +254,7 @@ console.log(toReverse("Mike Tyson"));
 //   return count;
 // }
 
-
-// console.log(countLetter("e", "engineer")); 
+// console.log(countLetter("e", "engineer"));
 
 // DEFINE
 // function qoldiqliBolish(a, b, callback) {
